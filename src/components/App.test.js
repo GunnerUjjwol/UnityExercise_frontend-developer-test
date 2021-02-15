@@ -9,9 +9,9 @@ describe('<App />', () => {
     wrapper = shallow(<App />);
   });
 
-  describe('render()', () => {
-    it('renders the Box', () => {
-      expect(wrapper.find({ 'data-testid': 'app-box' })).toHaveLength(1);
-    });
-  });
+  // describe('render()', () => {
+  //   it('renders the Grid', () => {
+  //     expect(wrapper.find('app')).toHaveLength(1);
+  //   });
+  // });
 });

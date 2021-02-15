@@ -1,31 +1,35 @@
 import React from "react";
 import api from "../lib/api";
 
-import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
 import { DataTable } from "./DataTable";
 
 export const App = () => {
+  /**
+   * fetches User Diff Data
+   */
   const fetchUserDiffData = () => {
     return api.getUsersDiff();
   };
 
+  /**
+   * fetches Project Diff Data
+   */
   const fetchProjectDiffData = () => {
     return api.getProjectsDiff();
   };
 
   return (
-    <Container className="app" fixed style={{ width: "100%" }}>
+    <Grid item xs={12} className="app">
       <DataTable
-        style={{ height: "50%", overflowY: "auto" }}
         label="User Diff Data Table"
         fetchData={() => fetchUserDiffData()}
       ></DataTable>
       <DataTable
-        style={{ height: "50%", overflowY: "auto" }}
         label="Project Diff Data Table"
         fetchData={() => fetchProjectDiffData()}
       ></DataTable>
-    </Container>
+    </Grid>
   );
 };
 
